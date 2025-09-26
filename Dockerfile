@@ -1,5 +1,7 @@
+# n8n + FFmpeg
 FROM n8nio/n8n:latest
 
+# Ganhar permissão para instalar pacotes
 USER root
 
 # Instala ffmpeg em Alpine OU Debian/Ubuntu
@@ -12,7 +14,8 @@ RUN set -eux; \
         rm -rf /var/lib/apt/lists/*; \
     fi
 
-# (Opcional) Ajusta permissões padrão do n8n
+# (opcional) ajustar permissões
 RUN chown -R node:node /home/node /data || true
 
+# Volta a rodar como 'node' (como a imagem oficial)
 USER node
