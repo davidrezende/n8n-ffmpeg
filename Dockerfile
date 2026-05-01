@@ -1,5 +1,5 @@
 # n8n + FFmpeg
-FROM n8nio/n8n:latest
+FROM n8nio/n8n:2.18.5
 
 # Ganhar permissão para instalar pacotes
 USER root
